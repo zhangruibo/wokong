@@ -25,13 +25,13 @@ object UrlCount {
     sc.stop()
   }
 
-  def hostCorrect(arr: String): (String, Int) = {
+  def hostCorrect(url: String): (String, Int) = {
     var host = ""
-    if (arr != "NoDef" && arr != "") {
-      if (arr.startsWith("http")) {       
-          host += arr.substring(arr.indexOf(":") + 3, arr.length).split("/")(0)       
+    if (url != "NoDef" && url != "") {
+      if (url.startsWith("http")) {       
+          host += url.substring(url.indexOf(":") + 3, url.length).split("/")(0)       
       } else {        
-          host += arr.split("/")(0)       
+          host += url.split("/")(0)       
       }
     }
     (host,1)
